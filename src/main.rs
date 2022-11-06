@@ -1,4 +1,4 @@
-use std::io;
+use std:: {io, thread, time::Duration};
 use tui::{
     backend::CrosstermBackend,
     widgets::{Widget, Block, Borders},
@@ -28,7 +28,7 @@ fn main() -> Result<(), io::Error> {
         f.render_widget(block, size);
     })?;
 
-    thread::sleep(Duration::from_millis(5000));
+    thread::sleep(Duration::from_millis(5000)); 
 
     // restore terminal
     disable_raw_mode()?;
